@@ -10,6 +10,7 @@ class CreateSettingsTable extends Migration {
 	{
 		Schema::create('settings', function(Blueprint $table) {
 			$table->increments('id');
+            $table->string('app_name');
 			$table->longText('about_app');
 			$table->float('commission_rate');
             $table->timestamps();

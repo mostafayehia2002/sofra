@@ -43,7 +43,7 @@ return [
             'visibility' => 'public',
             'throw' => false,
         ],
-        'restaurant' => [
+        'restaurants' => [
             'driver' => 'local',
             'root' => public_path('restaurant_image/'),
             'url' => env('APP_URL').'/storage',

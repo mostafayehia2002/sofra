@@ -29,7 +29,7 @@ class ClientOrderController extends Controller
         if ($validate->fails()) {
             return $this->returnError($validate->errors(), 401);
         }
-        //get restaurant
+        //get restaurants
         $restaurant = Restaurant::find($request->restaurant_id);
         if (!$restaurant){
             return $this->returnError('Restaurant Not Found', 404);
@@ -44,7 +44,7 @@ class ClientOrderController extends Controller
             'status' => 'pending',
             'note' => isset($request->note) ?? ''
         ]);
-        //restaurant data
+        //restaurants data
         $cost = 0;
         $delivary_cost = $restaurant->delivary_cost;
 

@@ -1,66 +1,265 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Sofra - Food Delivery Platform
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+<div align="center">
 
-## About Laravel
+![Laravel](https://img.shields.io/badge/Laravel-10.10+-red?logo=laravel&logoColor=white)
+![PHP](https://img.shields.io/badge/PHP-8.1+-purple?logo=php&logoColor=white)
+![License](https://img.shields.io/badge/License-MIT-green)
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+A complete food delivery platform for restaurants and customers with real-time order management and mobile/web API.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+[Features](#-features) • [Installation](#-installation) • [API Docs](#-api-documentation)
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+</div>
 
-## Learning Laravel
+---
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## 📋 Quick Links
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+- [Features](#-features)
+- [Tech Stack](#-tech-stack)
+- [Installation](#-installation)
+- [Getting Started](#-getting-started)
+- [API Documentation](#-api-documentation)
+- [License](#-license)
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+---
 
-## Laravel Sponsors
+## 🌟 Features
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+### 🍽️ For Restaurants
+- Secure authentication (register, login, password reset)
+- Manage menu items (products, prices, images)
+- Create and manage promotional offers
+- Real-time order management (pending, accept, reject, deliver)
+- View customer reviews and ratings
+- Profile management with image upload
 
-### Premium Partners
+### 👥 For Customers
+- Browse and search restaurants by city
+- View menus and active offers
+- Place orders with multiple items
+- Track order status in real-time
+- Rate and review restaurants
+- Manage multiple payment methods
+- Order history and receipts
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+### 👨‍💼 For Admins
+- Manage categories, cities, regions
+- User management (restaurants, customers)
+- Configure payment methods
+- System settings and reports
+- Contact management
 
-## Contributing
+### General
+- RESTful API for mobile & web apps
+- Multi-language support (English/Arabic, Cairo timezone)
+- Role-based access control with Laravel Sanctum
+- Real-time notifications
+- CORS support
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+---
 
-## Code of Conduct
+## 📦 Tech Stack
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+**Backend**: Laravel 10.10+ | PHP 8.1+ | MySQL
+**Frontend**: Vite | Bootstrap 5.2+ | SASS | Axios
+**Tools**: Composer | npm | PHPUnit | Laravel Pint
 
-## Security Vulnerabilities
+---
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+## 🔧 Installation
 
-## License
+### Prerequisites
+- PHP 8.1+ | Composer | Node.js & npm | MySQL
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+### Setup Steps
+
+```bash
+# Clone and install
+git clone https://github.com/yourusername/sofra.git
+cd sofra
+composer install
+npm install
+
+# Configure environment
+cp .env.example .env
+php artisan key:generate
+
+# Update .env with database credentials
+# DB_HOST=127.0.0.1, DB_DATABASE=sofra
+
+# Run migrations and seeders
+php artisan migrate
+php artisan db:seed
+
+# Build assets and start
+npm run build
+php artisan serve
+```
+
+App will be at `http://localhost:8000`
+
+**Development Mode:**
+```bash
+# Terminal 1
+php artisan serve
+
+# Terminal 2
+npm run dev
+```
+
+---
+
+## 🚀 Quick Start Guide
+
+### Restaurant Workflow
+1. Register → `POST /api/restaurants/register`
+2. Login → `POST /api/restaurants/login` (get API token)
+3. Add Products → `POST /api/restaurants/add-product`
+4. Create Offers → `POST /api/restaurants/add-offer`
+5. Manage Orders → `GET /api/restaurants/pending-orders`
+
+### Customer Workflow
+1. Register → `POST /api/client/register`
+2. Browse → `GET /api/client/restaurants`
+3. Search by City → `GET /api/client/restaurants/search/{cityId}`
+4. Place Order → `POST /api/client/new-order`
+5. Track Order → `GET /api/client/orders/accepts`
+6. Review → `POST /api/client/add-review`
+
+---
+
+## 📚 API Documentation
+
+**Base URL**: `http://localhost:8000/api`
+
+**Authentication**: Include `Authorization: Bearer {TOKEN}` header for protected routes
+
+### Main Endpoints
+
+| Feature | Method | Endpoint |
+|---------|--------|----------|
+| Categories | GET | `/categories` |
+| Cities | GET | `/cities` |
+| Payments | GET | `/payments` |
+| Contact Us | POST | `/contact-us` |
+
+### Restaurant APIs
+
+| Action | Method | Endpoint | Auth |
+|--------|--------|----------|------|
+| Register | POST | `/restaurants/register` | ✗ |
+| Login | POST | `/restaurants/login` | ✗ |
+| Profile | POST | `/restaurants/profile` | ✓ |
+| Add Product | POST | `/restaurants/add-product` | ✓ |
+| Get Products | GET | `/restaurants/get-products` | ✓ |
+| Update Product | POST | `/restaurants/update-product/{id}` | ✓ |
+| Delete Product | GET | `/restaurants/delete-product/{id}` | ✓ |
+| Add Offer | POST | `/restaurants/add-offer` | ✓ |
+| Get Offers | GET | `/restaurants/get-offers` | ✓ |
+| Pending Orders | GET | `/restaurants/pending-orders` | ✓ |
+| Accept Order | GET | `/restaurants/accept-order/{id}` | ✓ |
+| Reject Order | GET | `/restaurants/reject-order/{id}` | ✓ |
+| Deliver Order | GET | `/restaurants/delivered-order/{id}` | ✓ |
+
+### Client APIs
+
+| Action | Method | Endpoint | Auth |
+|--------|--------|----------|------|
+| Register | POST | `/client/register` | ✗ |
+| Login | POST | `/client/login` | ✗ |
+| Profile | POST | `/client/profile` | ✓ |
+| All Restaurants | GET | `/client/restaurants` | ✗ |
+| Restaurant Details | GET | `/client/restaurants/{id}` | ✗ |
+| Search by City | GET | `/client/restaurants/search/{cityId}` | ✗ |
+| All Offers | GET | `/client/offers` | ✗ |
+| New Order | POST | `/client/new-order` | ✓ |
+| Active Orders | GET | `/client/orders/accepts` | ✓ |
+| Delivered Orders | GET | `/client/orders/delivered` | ✓ |
+| Order Receipt | GET | `/client/order/receipt/{id}` | ✓ |
+| Add Review | POST | `/client/add-review` | ✓ |
+
+**Response Format:**
+```json
+{ "success": true, "message": "Operation successful", "data": {} }
+```
+
+---
+
+## 🔐 Authentication
+
+The app uses **Laravel Sanctum** for secure API authentication:
+
+- **Guards**: `restaurant_api`, `client_api`, `web`
+- **Flow**: Register → Login → Get Token → Use in Authorization Header
+- **Token Usage**: `Authorization: Bearer {your_token}`
+- **Protected Routes**: Require valid token in Authorization header
+
+---
+
+## 📁 Project Structure
+
+```
+sofra/
+├── app/Http/Controllers/Api/
+│   ├── Client/                  # Customer APIs
+│   ├── Restaurant/              # Restaurant APIs
+│   └── MainController.php       # General endpoints
+├── app/Models/                  # Eloquent models
+│   ├── Restaurant.php
+│   ├── Client.php
+│   ├── Order.php
+│   ├── Product.php
+│   └── ...
+├── routes/api.php               # API routes
+├── config/                      # Configuration files
+├── database/
+│   ├── migrations/
+│   └── seeders/
+├── public/                      # Static files & uploads
+└── resources/                   # Frontend assets
+```
+
+**Core Models**: Restaurant, Client, Order, Product, Offer, Review, Category, City, Region, Transaction
+
+---
+
+## 🧪 Testing & Deployment
+
+**Run Tests:**
+```bash
+php artisan test
+php artisan test tests/Feature/OrderTest.php
+```
+
+**Deployment Checklist:**
+- Set `APP_ENV=production`, `APP_DEBUG=false`
+- Configure database and mail settings
+- Run `php artisan migrate --force`
+- Run `php artisan optimize`
+- Set up SSL certificate
+- Configure web server (Apache/Nginx)
+
+---
+
+## 📞 Support & License
+
+- **Email**: support@sofra.local
+- **Issues**: Create GitHub issues
+- **License**: [MIT License](https://opensource.org/licenses/MIT)
+
+---
+
+## 🙏 Acknowledgments
+
+- [Laravel Framework](https://laravel.com)
+- [Laravel Sanctum](https://laravel.com/docs/sanctum)
+- [Spatie Laravel Permission](https://spatie.be/docs/laravel-permission)
+- [Vite](https://vitejs.dev)
+
+<div align="center">
+
+**Made with ❤️ by Mostafa Yehia**
+
+</div>

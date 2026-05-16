@@ -21,8 +21,8 @@
                         <h2 class="page-header-title">Show Role</h2>
                     </div>
                     <div class="col-auto">
-                        <a class="btn btn-primary" href="{{route('roles.index')}}">
-                            <i class="bi-person-plus-fill me-1"></i>
+                        <a class="btn btn-status-danger" href="{{route('roles.index')}}">
+                            <i class="bi-chevron-left"></i>
                             Return Back
                         </a>
                     </div>

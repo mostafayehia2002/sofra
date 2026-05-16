@@ -22,6 +22,7 @@ class CityController extends Controller
         return redirect()->back()->with('success','Successfully Added City');
     }
 
+
     public  function update(Request $request){
         $request->validate([
             'name'=>'required|unique:cities,name,'.$request->id,
@@ -33,7 +34,6 @@ class CityController extends Controller
         return redirect()->back()->with('success','Successfully Update City');
 
     }
-
     public function delete($id){
         $city=City::findOrFail($id);
         $city->delete();

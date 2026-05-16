@@ -36,6 +36,16 @@ class PermissionTableSeeder extends Seeder
             'create-region'=>'storeRegion',
             'update-region'=>'updateRegion',
             'delete-region'=>'deleteRegion',
+            //setting
+            'show-setting'=>'showSetting',
+            'create-setting'=>'storeSetting',
+            'update-setting'=>'updateSetting',
+            'delete-setting'=>'deleteSetting',
+            //payment
+            'show-payment'=>'showPayment',
+            'create-payment'=>'storePayment',
+            'update-payment'=>'updatePayment',
+            'delete-payment'=>'deletePayment',
             //role
             'role-list'=>'roles.index',
             'role-create'=>'roles.create',

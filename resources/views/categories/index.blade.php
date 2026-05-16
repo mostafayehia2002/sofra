@@ -21,6 +21,10 @@
                     </div>
 
                     <div class="col-auto">
+                        <a class="btn btn-status-danger" href="{{route('home')}}">
+                            <i class="bi-chevron-left"></i>
+                            Return Back
+                        </a>
                         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#AddCategory">
                             <i class="bi bi-plus fs-4"></i>
                             Add Category
@@ -103,12 +107,14 @@
                                 <td>{{date_format($category->updated_at,'Y:m:d')}}</td>
                                 <td>{{date_format($category->updated_at,'h:i:A')}}</td>
                                 <td>
+
                                     <a href="{{route('deleteCategory',$category->id)}}" class="btn btn-danger" onclick=" return confirm('Are You Sure To Delete Category')">
                                         <i class="bi bi-trash"></i>
                                     </a>
                                     <a href="#updateCategory"  class="btn btn-secondary  editCategory" data-bs-toggle="modal" data-id="{{$category->id}}" data-category_name="{{$category->name}}">
                                         <i class="bi bi-pen editCategory" data-id="{{$category->id}}" data-category_name="{{$category->name}}"></i>
                                     </a>
+
                                 </td>
                             </tr>
                            @endforeach

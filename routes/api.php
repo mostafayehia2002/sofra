@@ -29,12 +29,12 @@ Route::group(['controller'=>MainController::class],function (){
     Route::get('/payments','getPayments');
     Route::post('/contact-us','contactUs');
     Route::get('/about','aboutApp');
-    Route::get('restaurant/reviews','getReviews')->middleware('auth:restaurant_api');
+    Route::get('restaurants/reviews','getReviews')->middleware('auth:restaurant_api');
 });
 
-/*******************start restaurant************************/
-Route::group(['prefix'=>'restaurant'],function (){
-    //login and register restaurant
+/*******************start restaurants************************/
+Route::group(['prefix'=>'restaurants'],function (){
+    //login and register restaurants
     Route::group(['controller'=>RestaurantAuthController::class],function (){
         Route::post('/register','register');
         Route::post('/login','login');
@@ -42,7 +42,7 @@ Route::group(['prefix'=>'restaurant'],function (){
         Route::post('/change-password','changePassword');
     });
 
-    //restaurant profile
+    //restaurants profile
     Route::group(['middleware'=>'auth:restaurant_api','controller'=>RestaurantAuthController::class],function (){
         Route::post('/profile','profile');
         Route::post('/logout','logout');
@@ -76,10 +76,10 @@ Route::group(['prefix'=>'restaurant'],function (){
         Route::get('/delivered-order/{id}','deliveredOrder');
     });
 });
-/****************end restaurant**********************/
+/****************end restaurants**********************/
 /***************start client************************/
 Route::group(['prefix'=>'client'],function (){
-    //login and register restaurant
+    //login and register restaurants
     Route::post('/register',[ClientAuthController::class,'register']);
     Route::post('/login',[ClientAuthController::class,'login']);
     Route::post('/reset-password',[ClientAuthController::class,'resetPassword']);
@@ -94,8 +94,8 @@ Route::group(['prefix'=>'client'],function (){
     //clientMainController
     Route::group(['controller'=>ClientMainController::class],function (){
         Route::get('/restaurants','getRestaurants');
-        Route::get('/restaurant/{id}','getRestaurantDetails');
-        Route::get('/restaurant/search/{id}','getRestaurantByCity');
+        Route::get('/restaurants/{id}','getRestaurantDetails');
+        Route::get('/restaurants/search/{id}','getRestaurantByCity');
         Route::get('/offers','getOffers');
        //review
         Route::post('/add-review','addReview')->middleware('auth:client_api');

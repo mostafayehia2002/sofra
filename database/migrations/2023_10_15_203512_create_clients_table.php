@@ -13,6 +13,7 @@ class CreateClientsTable extends Migration {
 			$table->string('name');
 			$table->string('email')->unique();
 			$table->string('phone', 20)->unique();
+            $table->enum('status',['active','suspended']);
 			$table->string('password');
 			$table->integer('region_id')->unsigned();
 			$table->string('image');

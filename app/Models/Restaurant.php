@@ -50,6 +50,7 @@ class Restaurant extends Authenticatable
     {
         return $this->morphMany('App\Models\Offer', 'notificationable');
     }
+
     public function token()
     {
         return $this->morphOne('App\Models\Token', 'tokenable');

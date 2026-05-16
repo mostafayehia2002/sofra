@@ -9,15 +9,13 @@ class Client extends Model
 
     protected $table = 'clients';
     public $timestamps = true;
-    protected $fillable = array('name', 'email', 'phone', 'password', 'region_id', 'image', 'remember_me', 'api_token', 'code');
+    protected $fillable = array('name', 'email', 'phone', 'password', 'region_id', 'image','status', 'remember_me', 'api_token', 'code');
     protected $hidden = array('password', 'remember_me', 'api_token', 'code');
 
-    public function regoin()
+    public function region()
     {
-        return $this->belongsTo(Regoin::class);
+        return $this->belongsTo(Region::class);
     }
-
-
     public function orders()
     {
         return $this->hasMany(Order::class);

@@ -81,7 +81,6 @@
                                 </div>
                             </div>
                             <!-- End Collapse -->
-
                         </div>
                         <!-- End Collapse -->
                         <span class="dropdown-header mt-4">Pages</span>
@@ -92,18 +91,46 @@
                                 <span class="nav-link-title">Categories</span>
                             </a>
                         </div>
+
                         <div class="nav-item">
                             <a class="nav-link " href="{{route('showCity')}}" data-placement="left">
                                 <i class="bi-kanban nav-icon"></i>
                                 <span class="nav-link-title">Cities</span>
                             </a>
                         </div>
-
+                        <div class="nav-item">
+                            <a class="nav-link " href="{{route('showContact')}}" data-placement="left">
+                                <i class="bi-kanban nav-icon"></i>
+                                <span class="nav-link-title">Contact US</span>
+                            </a>
+                        </div>
+                        <div class="nav-item">
+                            <a class="nav-link " href="{{route('showSetting')}}" data-placement="left">
+                                <i class="bi-kanban nav-icon"></i>
+                                <span class="nav-link-title">Setting</span>
+                            </a>
+                        </div>
+                        <div class="nav-item">
+                            <a class="nav-link " href="{{route('showPayment')}}" data-placement="left">
+                                <i class="bi-kanban nav-icon"></i>
+                                <span class="nav-link-title">Payment</span>
+                            </a>
+                        </div>
+                        <div class="nav-item">
+                            <a class="nav-link " href="{{route('showRestaurant')}}" data-placement="left">
+                                <i class="bi-kanban nav-icon"></i>
+                                <span class="nav-link-title">Restaurant</span>
+                            </a>
+                        </div>
+                        <div class="nav-item">
+                            <a class="nav-link " href="{{route('showClient')}}" data-placement="left">
+                                <i class="bi-kanban nav-icon"></i>
+                                <span class="nav-link-title">Clients</span>
+                            </a>
+                        </div>
                     </div>
                 </div>
                 <!-- End Content -->
-
-
 
                 <!-- Footer -->
                 <div class="navbar-vertical-footer">

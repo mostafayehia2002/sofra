@@ -51,6 +51,7 @@
                 @endforeach
             @endif
 
+
             <!-- Table -->
             <table class="table table-borderless table-thead-bordered">
                 <thead class="thead-light">

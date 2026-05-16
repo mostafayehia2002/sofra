@@ -32,7 +32,7 @@ class ProductController extends Controller
             if($request->hasFile('image')) {
                 $image_name = time().$request->file('image')->getClientOriginalName();
                 $data['image'] = $image_name;
-                $request->file('image')->storeAs('/products', $image_name, 'restaurant');
+                $request->file('image')->storeAs('/products', $image_name, 'restaurants');
             }
               $product=Product::create($data);
                 if($product) {
@@ -64,8 +64,8 @@ class ProductController extends Controller
                  $data = $request->all();
                if($request->hasFile('image')) {
                    $image_name = time() . $request->file('image')->getClientOriginalName();
-                   $request->file('image')->storeAs('/products', $image_name, 'restaurant');
-                   Storage::disk('restaurant')->delete('products/' . $product->image);
+                   $request->file('image')->storeAs('/products', $image_name, 'restaurants');
+                   Storage::disk('restaurants')->delete('products/' . $product->image);
                    $data['image']=$image_name;
                }else{
                    $data['image'] = $product->image;
@@ -93,7 +93,7 @@ class ProductController extends Controller
 
         $product = $restaurant->products()->where('id',$id)->first();
         if($product) {
-            Storage::disk('restaurant')->delete('products/'.$product->image);
+            Storage::disk('restaurants')->delete('products/'.$product->image);
             $product->delete();
             return $this->returnSuccessMessage(200,'Successfully Deleted Product');
         }

@@ -4,13 +4,14 @@
     <div class="navbar-nav-wrap">
         <!-- Logo -->
         <a class="navbar-brand" href="#" aria-label="Front">
+
             <img class="navbar-brand-logo" src="{{asset('assets/svg/logos/logo.svg')}}" alt="Logo" data-hs-theme-appearance="default">
             <img class="navbar-brand-logo" src="{{asset('assets/svg/logos-light/logo.svg')}}" alt="Logo" data-hs-theme-appearance="dark">
+
             <img class="navbar-brand-logo-mini" src="{{asset('assets/svg/logos/logo-short.svg')}}" alt="Logo" data-hs-theme-appearance="default">
             <img class="navbar-brand-logo-mini" src="{{asset('assets/svg/logos-light/logo-short.svg')}}" alt="Logo" data-hs-theme-appearance="dark">
         </a>
         <!-- End Logo -->
-
         <div class="navbar-nav-wrap-content-start">
             <!-- Navbar Vertical Toggle -->
             <button type="button" class="js-navbar-vertical-aside-toggle-invoker navbar-aside-toggler">
@@ -24,7 +25,6 @@
 
         <div class="navbar-nav-wrap-content-end">
             <!-- Navbar -->
-
 
             <ul class="navbar-nav">
                 <li class="nav-item d-none d-sm-inline-block">
@@ -457,7 +457,7 @@
                             </div>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="{{route('adminProfile')}}">Profile &amp; account</a>
-                            <a class="dropdown-item" href="#">Settings</a>
+                            <a class="dropdown-item" href="{{route('showSetting')}}">Settings</a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                onclick="event.preventDefault();

@@ -28,7 +28,7 @@ class OfferController extends Controller
             $data=$request->all();
             if($request->hasFile('image')){
                 $image_name=time().$request->file('image')->getClientOriginalName();
-                $request->file('image')->storeAs('/offers',$image_name,'restaurant');
+                $request->file('image')->storeAs('/offers',$image_name,'restaurants');
                 $data['image'] =$image_name;
                 $data['restaurant_id']=$restaurant->id;
                 $offer=Offer::create($data);
@@ -62,8 +62,8 @@ class OfferController extends Controller
             $data = $request->all();
             if($request->hasFile('image')) {
                 $image_name = time() . $request->file('image')->getClientOriginalName();
-                $request->file('image')->storeAs('/offers', $image_name, 'restaurant');
-                Storage::disk('restaurant')->delete('offers/' . $offer->image);
+                $request->file('image')->storeAs('/offers', $image_name, 'restaurants');
+                Storage::disk('restaurants')->delete('offers/' . $offer->image);
                 $data['image']=$image_name;
             }else{
                 $data['image'] = $offer->image;
@@ -91,7 +91,7 @@ class OfferController extends Controller
         $restaurant = $request->user();
         $offer = $restaurant->offers()->where('id',$id)->first();
         if($offer) {
-            Storage::disk('restaurant')->delete('offers/'.$offer->image);
+            Storage::disk('restaurants')->delete('offers/'.$offer->image);
             $offer->delete();
             return $this->returnSuccessMessage(200,'Successfully Deleted Offer');
         }

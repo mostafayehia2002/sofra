@@ -21,6 +21,10 @@
                     </div>
 
                     <div class="col-auto">
+                        <a class="btn btn-status-danger" href="{{route('home')}}">
+                            <i class="bi-chevron-left"></i>
+                            Return Back
+                        </a>
                         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#AddCity">
                             <i class="bi bi-plus fs-4"></i>
                             Add City
@@ -183,6 +187,7 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
+
                         <form action="{{route('updateCity')}}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="row">
